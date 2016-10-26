@@ -1,2 +1,9 @@
 <p>Im the instaDex!</p>
-  
+
+
+  <div data-ng-repeat = "gram in vm.grams">
+    <p>
+      <a data-ui-sref="gramShow({id: $index})">{{gram.title}}</a>
+    </p>
+
+  </div>
