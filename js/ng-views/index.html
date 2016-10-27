@@ -1,9 +1,21 @@
-<p>Im the instaDex!</p>
+<p>Im the instasDex!</p>
+
+<a data-ui-sref="gramNew">New Instagram</a>
 
 
-  <div data-ng-repeat = "gram in vm.grams">
-    <p>
-      <a data-ui-sref="gramShow({id: $index})">{{gram.title}}</a>
-    </p>
+  <div data-ng-repeat = "gram in vm.grams | orderBy: '-created_at'">
+    <div>
+      <a data-ui-sref="gramShow({id: $index})">{{gram.body}}</a>
+      <a data-ui-sref="gramEdit({id: gram.id})">Edit</a>
+    </div>
+
+    <div>
+      {{gram.author}}
+    </div>
+
+    <div>
+      <img data-ng-src={{gram.photo_url}} alt="image" />
+    </div>
+
 
   </div>
